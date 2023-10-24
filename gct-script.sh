@@ -90,9 +90,3 @@ else
 	wget https://raw.githubusercontent.com/MarcioIoT/NmonVisualizer/main/NMONVisualizer.jar #instalando visualizador de dados capturados via NMON
 	echo "NMON instalado com sucesso!"
 fi
-
-
-
-
-
-
