@@ -80,7 +80,21 @@ mkdir CapturasNMON #criando pasta para armazenar as capturas do NMON
 cd /home/ubuntu/CapturasNMON #alterando para a pasta criada
 nmon -f -s 5 -c 10 #capturando  dados, com leituras a cada 5 segundos, 10 vezes em s>
 
-wget https://raw.githubusercontent.com/MarcioIoT/NmonVisualizer/main/NMONVisualizer.jar #instalando visualizador de dados capturados via NMON
+echo "Verificando se tem NMON instalado"
+which nmon | grep /usr/bin/nmon
+
+if [ $? = 0 ]; then 
+	echo “Cliente possui NMON instalado”
+else
+	sudo apt install nmon #instalando NMON
+	wget https://raw.githubusercontent.com/MarcioIoT/NmonVisualizer/main/NMONVisualizer.jar #instalando visualizador de dados capturados via NMON
+	echo "NMON instalado com sucesso!"
+else {
+	echo "Cancelando instalação do NMON"
+}
+fi
+
+
 
 
 
