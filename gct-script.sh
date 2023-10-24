@@ -73,13 +73,6 @@ if [ $? = 0 ]; then
 		fi
 fi
 
-echo "Inicializando NMON"
-nmon
-
-mkdir CapturasNMON #criando pasta para armazenar as capturas do NMON
-cd /home/ubuntu/CapturasNMON #alterando para a pasta criada
-nmon -f -s 5 -c 10 #capturando  dados, com leituras a cada 5 segundos, 10 vezes em s>
-
 echo "Verificando se tem NMON instalado"
 which nmon | grep /usr/bin/nmon
 
@@ -90,3 +83,10 @@ else
 	wget https://raw.githubusercontent.com/MarcioIoT/NmonVisualizer/main/NMONVisualizer.jar #instalando visualizador de dados capturados via NMON
 	echo "NMON instalado com sucesso!"
 fi
+
+echo "Inicializando NMON"
+nmon
+
+mkdir CapturasNMON #criando pasta para armazenar as capturas do NMON
+cd /home/ubuntu/CapturasNMON #alterando para a pasta criada
+nmon -f -s 5 -c 10 #capturando  dados, com leituras a cada 5 segundos, 10 vezes em s>
