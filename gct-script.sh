@@ -89,9 +89,6 @@ else
 	sudo apt install nmon #instalando NMON
 	wget https://raw.githubusercontent.com/MarcioIoT/NmonVisualizer/main/NMONVisualizer.jar #instalando visualizador de dados capturados via NMON
 	echo "NMON instalado com sucesso!"
-else {
-	echo "Cancelando instalação do NMON"
-}
 fi
 
 
